@@ -1,0 +1,132 @@
+@import 'tailwindcss';
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #1457DC;
+  --secondary-color: #3EB489;
+  --tertiary-color: #000000;
+  --quaternary-color: #ffffff;
+  --quinary-color: #000000;
+  --card-gradient: linear-gradient(131.89deg, rgba(0, 184, 169, 0.19) -118.06%, rgba(255, 255, 255, 0.1881) 98.59%);
+}
+
+/* 2. Global styles */
+html,
+body {
+  padding: 0;
+  margin: 0;
+  background: #ffffff54;
+  min-height: 100%;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* 3. Font variants */
+.plus-jakarta-sans-thin {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+.plus-jakarta-sans-extralight {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+.plus-jakarta-sans-light {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.plus-jakarta-sans-regular {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+.plus-jakarta-sans-medium {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+.plus-jakarta-sans-semibold {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+.plus-jakarta-sans-bold {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  font-style: normal;
+}
+
+/* Italics */
+.plus-jakarta-sans-thin-italic {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 200;
+  font-style: italic;
+}
+.plus-jakarta-sans-extralight-italic {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+.plus-jakarta-sans-light-italic {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+.plus-jakarta-sans-regular-italic {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+.plus-jakarta-sans-medium-italic {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 600;
+  font-style: italic;
+}
+.plus-jakarta-sans-semibold-italic {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+.plus-jakarta-sans-bold-italic {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  font-style: italic;
+}
+
+.ellipse {
+  width: 454px;
+  height: 454px;
+  position: absolute;
+  top: -60px;
+  left: -99px;
+  background: #ab9aff1a;
+  opacity: 1;
+  backdrop-filter: blur(300px);
+  filter: blur(80px);
+  border-radius: 50%;
+}
+
+/* Hide scrollbar for carousel */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;  /* Safari and Chrome */
+}
+
+/* Custom gradient for features section */
+.features-gradient {
+  background: linear-gradient(131.89deg, rgba(0, 184, 169, 0.4) -118.06%, rgba(255, 255, 255, 0.396) 98.59%);
+}
+

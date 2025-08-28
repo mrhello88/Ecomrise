@@ -1,8 +1,24 @@
+import ImageBox from "../ImageBox";
+
 export default function Features() {
   return (
     <section className="relative w-full flex items-center justify-center">
+      {/* Reusable ImageBox component */}
+      <ImageBox position="-top-80 right-0" />
+      {/* Green color decorative element */}
+      <img
+        src="/green-color-right-side.png"
+        alt="green decorative element"
+        className="absolute right-0 top-1/3 transform -translate-y-1/2 w-auto h-auto object-contain pointer-events-none z-100 hidden sm:hidden md:block"
+      />
+      {/* Left side decorative element */}
+      <img
+        src="/elipse-star-left-side.png"
+        alt="left side decorative element"
+        className="absolute left-0 top-1/3 transform -translate-y-1/2 w-auto h-auto object-contain pointer-events-none z-100 hidden sm:hidden md:block"
+      />
       {/* Centered inner wrapper matching desired width */}
-      <div className="w-full max-w-7xl px-4! md:px-6! lg:px-10! xl:px-16! mt-20!">
+      <div className="w-full px-4! max-w-[calc(80rem+10rem)] flex flex-col items-center md:px-6! lg:px-10! xl:px-16! mt-20!">
         {/* Header Section - using flexbox instead of absolute positioning */}
         <div className="w-full">
           {/* Before & After - Top left */}
@@ -23,7 +39,7 @@ export default function Features() {
             </h2>
 
             {/* Description - right aligned */}
-            <p className="font-['Plus_Jakarta_Sans'] font-medium text-base md:text-lg lg:text-xl leading-8 text-[#7E8492] w-full md:w-1/3 mt-4 md:mt-0">
+            <p className="font-['Plus_Jakarta_Sans'] self-end font-medium text-base md:text-lg lg:text-xl leading-8 text-[#7E8492] w-full md:w-1/3">
               Level up your Growth: Powerful tools for analysis, generation, and
               optimization.
             </p>

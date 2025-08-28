@@ -1,8 +1,14 @@
 const SmartAgent = () => {
   return (
     <section className="relative w-full bg-white py-20 !mt-20 flex flex-col items-center">
+      {/* Left side decorative element */}
+      <img
+        src="/elipse-star-left-side-1.png"
+        alt="left side decorative element"
+        className="absolute -left-20 top-[100%] transform -translate-y-1/2 w-auto h-auto object-contain pointer-events-none z-50 hidden sm:hidden md:block"
+      />
       {/* Centered container matching other sections */}
-      <div className="w-full max-w-7xl py-4! !px-4 md:!px-6 lg:!px-10 xl:!px-16">
+      <div className="w-full max-w-[calc(80rem+10rem)] py-4! !px-4 md:!px-6 lg:!px-10 xl:!px-16">
         
         {/* Header Section */}
         <div className="flex flex-col items-center md:items-start !mb-10 md:!mb-12">
@@ -111,7 +117,7 @@ const SmartAgent = () => {
         <div className="flex flex-wrap items-stretch !gap-3 md:!gap-4 !mt-2 md:grid md:grid-cols-3">
           
           {/* Card 4 - Conversational Analytics + Custom Reports */}
-          <div className="basis-full md:col-span-2 h-full min-w-0 bg-white/80 backdrop-blur-md rounded-2xl border border-white/20 !p-6 overflow-hidden shadow-lg flex flex-col md:flex-row items-start" style={{background: 'var(--card-gradient)'}}>
+          <div className="basis-full md:col-span-2 z-51 h-full min-w-0 bg-white/80 backdrop-blur-md rounded-2xl border border-white/20 !p-6 overflow-hidden shadow-lg flex flex-col md:flex-row items-start" style={{background: 'var(--card-gradient)'}}>
             {/* Left Content */}
             <div className="flex-1 md:pr-6">
               <div className="flex items-center gap-3">

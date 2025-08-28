@@ -2,7 +2,7 @@ const Analytics = () => {
   return (
     <section className="relative w-full bg-white py-16! md:py-20! flex flex-col items-center">
       {/* Centered container matching other sections */}
-      <div className="w-full max-w-[calc(80rem+10rem)] relative">
+      <div className="w-full max-w-[calc(80rem+10rem)]">
         {/* Header Section */}
         <div className="text-center mb-3! md:mb-6!">
           {/* Top subtitle */}
@@ -168,7 +168,7 @@ const Analytics = () => {
 
         {/* Bottom Section */}
         <div className="text-center">
-          <p className="text-base md:text-lg italic text-[#7E8492]">
+          <p className="text-base md:!px-0 px-12! md:text-lg italic text-[#7E8492]">
             This is what makes us different—our platform adapts to you.
           </p>
         </div>

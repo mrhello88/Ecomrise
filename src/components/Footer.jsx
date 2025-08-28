@@ -2,7 +2,7 @@ const Footer = () => {
   return (
     <footer className="relative !w-full !py-20 !flex !flex-col !items-center">
       {/* Centered container matching other sections */}
-      <div className="relative !w-full !max-w-7xl !mx-auto !px-4 sm:!px-6 lg:!px-8">
+      <div className="relative !w-full !max-w-[calc(80rem+10rem)] !mx-auto !px-4 sm:!px-6 lg:!px-8">
         {/* Main footer layout matching the image */}
         <div className="!flex !flex-col lg:!flex-row lg:!justify-between !items-start !gap-10 lg:!gap-16 !mb-16">
           {/* Left side - Newsletter signup */}
@@ -141,8 +141,8 @@ const Footer = () => {
         </div>
 
         {/* Bottom section - Copyright and scroll to top */}
-        <div className="!flex !flex-col sm:!flex-row !items-center !justify-between !gap-4 !pt-8 !border-t border-gray-200">
-          <p className="!text-sm text-gray-600 !text-center sm:!text-left">
+        <div className="!flex !flex-col sm:!flex-row !items-center !justify-between !gap-4 !pt-8">
+          <p className="!text-sm text-gray-600 !text-right">
             Copyright © 2023 EcomRise. All rights reserved
           </p>
 

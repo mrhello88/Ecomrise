@@ -2,7 +2,7 @@ const SmartAgentBuilt = () => {
   return (
     <section className="relative w-full bg-white !py-16 md:!py-20 flex flex-col items-center">
       {/* Centered container */}
-      <div className="w-full max-w-7xl !px-4 md:!px-6 lg:!px-10 xl:!px-16">
+      <div className="w-full max-w-[calc(80rem+10rem)] !px-4 md:!px-6 lg:!px-10 xl:!px-16">
         {/* Main content container with background */}
         <div className="w-full bg-gradient-to-r from-blue-50 to-cyan-50 !rounded-[20px] md:rounded-3xl !px-6 !py-4 md:!px-12 md:!py-14 md:!h-[436px]">
           <div className="flex h-full flex-col md:flex-row items-center justify-center md:justify-between !gap-8">

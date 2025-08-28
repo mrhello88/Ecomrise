@@ -1,9 +1,13 @@
+import ImageBox from "../ImageBox";
+
 const Hero = () => {
   return (
     <section className="relative w-full overflow-hidden flex justify-center">
       {/* Decorative Ellipse (anchored to full section corner) */}
       <div className="ellipse"></div>
-      <div className="relative w-full max-w-7xl flex flex-col mt-32! md:mt-52! px-4! md:px-6! lg:px-10! xl:px-16!">
+
+      {/* <ImageBox position="-bottom-80 -right-5" /> */}
+      <div className="w-full flex flex-col mt-32! md:mt-52! px-4! md:px-6! lg:px-10! xl:px-16!">
         {/* Ellipse 527 (decorative bg) */}
         <div
           className="absolute w-96! h-96! -ml-24! rounded-full bg-[rgba(171,154,255,0.1)] blur-3xl! z-0"

@@ -1,4 +1,18 @@
+import { useEffect, useRef } from 'react';
+
 const Analytics = () => {
+  const scrollContainerRef = useRef(null);
+  const secondCardRef = useRef(null);
+
+  useEffect(() => {
+    const container = scrollContainerRef.current;
+    const secondCard = secondCardRef.current;
+    if (!container || !secondCard) return;
+
+    const targetScrollLeft = secondCard.offsetLeft - (container.clientWidth - secondCard.clientWidth) / 2;
+    container.scrollTo({ left: Math.max(0, targetScrollLeft) });
+  }, []);
+
   return (
     <section className="relative w-full bg-white py-16! md:py-20! flex flex-col items-center">
       {/* Centered container matching other sections */}
@@ -21,7 +35,7 @@ const Analytics = () => {
 
         {/* Carousel Section */}
         <div className="relative w-full">
-          <div className="overflow-x-auto scrollbar-hide pb-3! md:pb-8!">
+          <div ref={scrollContainerRef} className="overflow-x-auto scrollbar-hide pb-3! md:pb-8!">
             <div className="flex gap-6! md:gap-10!">
               {/* Analytics Agent Card */}
               <div className="flex-shrink-0 w-[350px]! md:w-[1059px]! 2xl:w-auto h-[345px]! md:h-[486px]! 2xl:h-auto rounded-3xl relative overflow-hidden features-gradient">
@@ -73,7 +87,7 @@ const Analytics = () => {
                 </div>
               </div>
               {/* Analytics Agent Card (duplicate 1) */}
-              <div className="flex-shrink-0 w-[350px]! md:w-[1059px]! 2xl:w-auto h-[345px]! md:h-[486px]! 2xl:h-auto rounded-3xl relative overflow-hidden features-gradient">
+              <div ref={secondCardRef} className="flex-shrink-0 w-[350px]! md:w-[1059px]! 2xl:w-auto h-[345px]! md:h-[486px]! 2xl:h-auto rounded-3xl relative overflow-hidden features-gradient">
                 {/* Feature Background */}
                 <img
                   src="/Mobile-Mask-group-Analytics-Card.png"

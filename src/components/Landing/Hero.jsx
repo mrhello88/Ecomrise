@@ -21,8 +21,8 @@ const Hero = () => {
             {/* Content container with width constraint */}
             <div className="w-full! lg:max-w-xl! flex flex-col justify-center items-center md:items-start! lg:items-start!">
               {/* Small badge above headline */}
-              <div className="relative flex items-center justify-center rounded-full border border-[var(--primary-color)] w-64! h-9! md:w-48! md:h-8! lg:w-60! xl:w-64! lg:h-10! xl:h-11!">
-                <div className="w-48! h-7! md:w-40! lg:w-48! xl:w-48! md:h-6! lg:h-7! xl:h-7!">
+              <div className="!flex !items-center !justify-center rounded-full border border-[var(--primary-color)] w-64! h-9! md:w-48! md:h-8! lg:w-60! xl:w-64! lg:h-10! xl:h-11! ">
+                <div className="w-full! h-full! flex items-center justify-center ">
                   <span className="text-base! md:text-sm! lg:text-sm! xl:text-base! leading-7! md:leading-6! lg:leading-7! xl:leading-8! font-semibold text-[var(--primary-color)] whitespace-nowrap">
                     keeping you ahead 24/7.
                   </span>

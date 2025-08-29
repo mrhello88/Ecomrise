@@ -18,7 +18,7 @@ export default function Features() {
         className="absolute left-0 top-1/3 transform -translate-y-1/2 w-auto h-auto object-contain pointer-events-none z-100 hidden sm:hidden md:block"
       />
       {/* Centered inner wrapper matching desired width */}
-      <div className="w-full px-4! max-w-[calc(80rem+10rem)] flex flex-col items-center md:px-6! lg:px-10! xl:px-16! mt-20!">
+      <div className="w-full px-4! max-w-[calc(80rem+10rem)] flex flex-col items-center md:px-6! lg:px-10! xl:px-12! mt-20!">
         {/* Header Section - using flexbox instead of absolute positioning */}
         <div className="w-full">
           {/* Before & After - Top left */}

@@ -4,7 +4,7 @@ const SmartAgentBuilt = () => {
       {/* Centered container */}
       <div className="w-full max-w-[calc(80rem+10rem)] !px-4 md:!px-6 lg:!px-10 xl:!px-16">
         {/* Main content container with background */}
-        <div className="w-full features-gradient !rounded-[20px] md:rounded-3xl !px-6 !py-4 md:!px-12 md:!py-14 md:!h-[436px]">
+        <div className="w-full features-gradient !rounded-[20px] md:rounded-3xl !px-6 !py-4 md:!px-10 lg:!px-12 md:!py-14 md:!h-[436px]">
           <div className="flex h-full flex-col md:flex-row items-center justify-center md:justify-between !gap-8">
             {/* Left Side - AI Logo/Icon */}
             <div className="flex-shrink-0 flex items-center justify-center">

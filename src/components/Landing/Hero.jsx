@@ -7,7 +7,7 @@ const Hero = () => {
       <div className="ellipse"></div>
 
       {/* <ImageBox position="-bottom-80 -right-5" /> */}
-      <div className="w-full flex flex-col mt-32! md:mt-52! px-4! md:px-6! lg:px-10! xl:px-16!">
+      <div className="w-full flex flex-col mt-32! md:mt-52! px-4! md:px-6! lg:px-10! xl:px-12!">
         {/* Ellipse 527 (decorative bg) */}
         <div
           className="absolute w-96! h-96! -ml-24! rounded-full bg-[rgba(171,154,255,0.1)] blur-3xl! z-0"

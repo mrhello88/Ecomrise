@@ -38,13 +38,13 @@ const SmartAgent = () => {
               <div className="w-8 h-8 bg-[var(--primary-color)] text-white rounded-full flex items-center justify-center text-sm font-bold">
                 1
               </div>
-              <h3 className="font-['Plus_Jakarta_Sans'] font-bold text-[var(--primary-color)] text-lg md:text-xl">
+              <h3 className="font-bold text-[var(--primary-color)] text-lg md:text-xl">
                 Save thousands on agencies
               </h3>
             </div>
             
             {/* Description */}
-            <p className="font-['Plus_Jakarta_Sans'] text-gray-600 text-sm md:text-base !mt-2">
+            <p className="text-gray-600 text-sm md:text-base !mt-2">
               Let AI track performance, recommend changes, and optimize daily.
             </p>
             
@@ -65,13 +65,13 @@ const SmartAgent = () => {
               <div className="w-8 h-8 bg-[var(--primary-color)] text-white rounded-full flex items-center justify-center text-sm font-bold">
                 2
               </div>
-              <h3 className="font-['Plus_Jakarta_Sans'] font-bold text-[var(--primary-color)] text-lg md:text-xl">
+              <h3 className="  font-bold text-[var(--primary-color)] text-lg md:text-xl">
                 Always-on Anomaly Detection
               </h3>
             </div>
             
             {/* Description */}
-            <p className="font-['Plus_Jakarta_Sans'] text-gray-600 text-sm md:text-base !mt-2">
+            <p className="  text-gray-600 text-sm md:text-base !mt-2">
               Get notified of sudden changes in spend, sales, stock, or customer behavior — before it hurts your business.
             </p>
             
@@ -92,13 +92,13 @@ const SmartAgent = () => {
               <div className="w-8 h-8 bg-[var(--primary-color)] text-white rounded-full flex items-center justify-center text-sm font-bold">
                 3
               </div>
-              <h3 className="font-['Plus_Jakarta_Sans'] font-bold text-[var(--primary-color)] text-lg md:text-xl">
+              <h3 className="  font-bold text-[var(--primary-color)] text-lg md:text-xl">
                 All-in-one AI platform
               </h3>
             </div>
             
             {/* Description */}
-            <p className="font-['Plus_Jakarta_Sans'] text-gray-600 text-sm md:text-base !mt-2">
+            <p className="  text-gray-600 text-sm md:text-base !mt-2">
               Unify Shopify, Facebook Ads, and more — and manage everything through a single intelligent system of AI agents.
             </p>
             
@@ -124,11 +124,11 @@ const SmartAgent = () => {
                 <div className="w-8 h-8 bg-[var(--primary-color)] text-white rounded-full flex items-center justify-center text-sm font-bold">
                   4
                 </div>
-                <h3 className="font-['Plus_Jakarta_Sans'] font-bold text-[var(--primary-color)] text-lg md:text-xl">
+                <h3 className="  font-bold text-[var(--primary-color)] text-lg md:text-xl">
                   Conversational Analytics + Custom Reports
                 </h3>
               </div>
-              <p className="font-['Plus_Jakarta_Sans'] text-gray-600 text-sm md:text-base !mt-2">
+              <p className="  text-gray-600 text-sm md:text-base !mt-2">
                 Ask "Why did ROAS drop this week?" and get a clear answer. Use built-in reports or create custom views tailored to your KPIs.
               </p>
             </div>
@@ -149,13 +149,13 @@ const SmartAgent = () => {
               <div className="w-8 h-8 bg-[var(--primary-color)] text-white rounded-full flex items-center justify-center text-sm font-bold">
                 5
               </div>
-              <h3 className="font-['Plus_Jakarta_Sans'] font-bold text-[var(--primary-color)] text-lg md:text-xl">
+              <h3 className="  font-bold text-[var(--primary-color)] text-lg md:text-xl">
                 Data-backed Recommendations
               </h3>
             </div>
             
             {/* Description */}
-            <p className="font-['Plus_Jakarta_Sans'] text-gray-600 text-sm md:text-base !mt-2">
+            <p className="  text-gray-600 text-sm md:text-base !mt-2">
               Your agents suggest budget shifts, content tweaks, and inventory actions — based on what's really happening in your store.
             </p>
             

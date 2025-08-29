@@ -22,14 +22,14 @@ export default function Features() {
         {/* Header Section - using flexbox instead of absolute positioning */}
         <div className="w-full">
           {/* Before & After - Top left */}
-          <h3 className="w-full font-['Plus_Jakarta_Sans'] font-bold text-xl md:text-2xl lg:text-3xl text-[#4357E0] leading-[120%] tracking-[0px] text-center md:text-left">
+          <h3 className="w-full font-bold text-xl md:text-2xl lg:text-3xl text-[#4357E0] leading-[120%] tracking-[0px] text-center md:text-left">
             Before & After
           </h3>
 
           {/* Main content row */}
           <div className="flex flex-col md:flex-row justify-center md:justify-between items-center md:items-start text-center md:text-left">
             {/* Main Heading */}
-            <h2 className="font-['Plus_Jakarta_Sans'] text-[#111111] w-full md:w-2/3 font-medium text-3xl md:text-4xl lg:text-5xl xl:text-[56px] leading-[120%] tracking-[0px]">
+            <h2 className="text-[#111111] w-full md:w-2/3 font-medium text-3xl md:text-4xl lg:text-5xl xl:text-[56px] leading-[120%] tracking-[0px]">
               How{" "}
               <span className="font-bold text-3xl md:text-4xl lg:text-5xl xl:text-[56px] leading-[120%] tracking-[0px] text-[var(--primary-color)]">
                 EcomRise
@@ -39,7 +39,7 @@ export default function Features() {
             </h2>
 
             {/* Description - right aligned */}
-            <p className="font-['Plus_Jakarta_Sans'] self-end font-medium text-base md:text-lg lg:text-xl leading-8 text-[#7E8492] w-full md:w-1/3">
+            <p className="self-end font-medium text-base md:text-lg lg:text-xl leading-8 text-[#7E8492] w-full md:w-1/3">
               Level up your Growth: Powerful tools for analysis, generation, and
               optimization.
             </p>

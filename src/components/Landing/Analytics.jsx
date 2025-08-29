@@ -24,7 +24,7 @@ const Analytics = () => {
           <div className="overflow-x-auto scrollbar-hide pb-3! md:pb-8!">
             <div className="flex gap-6! md:gap-10!">
               {/* Analytics Agent Card */}
-              <div className="flex-shrink-0 w-[350px]! md:w-[1059px]! 2xl:w-auto h-[345px]! md:h-[486px]! 2xl:h-auto bg-gradient-to-br from-blue-50 to-white rounded-3xl border-2 border-[var(--primary-color)] relative overflow-hidden">
+              <div className="flex-shrink-0 w-[350px]! md:w-[1059px]! 2xl:w-auto h-[345px]! md:h-[486px]! 2xl:h-auto rounded-3xl relative overflow-hidden features-gradient">
                 {/* Feature Background */}
                 <img
                   src="/Mobile-Mask-group-Analytics-Card.png"
@@ -73,7 +73,7 @@ const Analytics = () => {
                 </div>
               </div>
               {/* Analytics Agent Card (duplicate 1) */}
-              <div className="flex-shrink-0 w-[350px]! md:w-[1059px]! 2xl:w-auto h-[345px]! md:h-[486px]! 2xl:h-auto bg-gradient-to-br from-blue-50 to-white rounded-3xl border-2 border-[var(--primary-color)] relative overflow-hidden">
+              <div className="flex-shrink-0 w-[350px]! md:w-[1059px]! 2xl:w-auto h-[345px]! md:h-[486px]! 2xl:h-auto rounded-3xl relative overflow-hidden features-gradient">
                 {/* Feature Background */}
                 <img
                   src="/Mobile-Mask-group-Analytics-Card.png"
@@ -118,7 +118,7 @@ const Analytics = () => {
                 </div>
               </div>
               {/* Analytics Agent Card (duplicate 2) */}
-              <div className="flex-shrink-0 w-[350px]! md:w-[1059px]! h-[345px]! md:h-[486px]! 2xl:h-auto bg-gradient-to-br from-blue-50 to-white rounded-3xl border-2 border-[var(--primary-color)] relative overflow-hidden">
+              <div className="flex-shrink-0 w-[350px]! md:w-[1059px]! h-[345px]! md:h-[486px]! 2xl:h-auto rounded-3xl relative overflow-hidden features-gradient">
                 {/* Feature Background */}
                 <img
                   src="/Mobile-Mask-group-Analytics-Card.png"

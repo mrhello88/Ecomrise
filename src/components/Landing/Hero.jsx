@@ -130,8 +130,8 @@ const Hero = () => {
           </div>
         </div>
         {/* Desktop/Tablet CTA at bottom (768px+) */}
-        <div className="hidden md:flex items-center justify-center md:mt-6! lg:mt-12! md:mb-6! lg:mb-8!">
-          <div className="relative w-32! h-32! opacity-100 z-20! lg:-ml-40! md:-ml-24!">
+        <div className="hidden md:flex items-center justify-center md:mt-2! lg:mt-4! md:mb-4! lg:mb-8!">
+          <div className="relative w-32! h-32! opacity-100 z-20! lg:-ml-68! md:-ml-36!">
             <div className="absolute inset-0 rounded-full bg-[#3EB489] z-0" />
             <div className="absolute left-6! top-6! w-20! h-20! rounded-full bg-[var(--quaternary-color)] z-10! flex items-center justify-center">
               <img

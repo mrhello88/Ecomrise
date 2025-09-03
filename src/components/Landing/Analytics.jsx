@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const Analytics = () => {
   const scrollContainerRef = useRef(null);
@@ -12,6 +13,20 @@ const Analytics = () => {
     const targetScrollLeft = secondCard.offsetLeft - (container.clientWidth - secondCard.clientWidth) / 2;
     container.scrollTo({ left: Math.max(0, targetScrollLeft) });
   }, []);
+
+  const scrollLeft = () => {
+    const container = scrollContainerRef.current;
+    if (container) {
+      container.scrollBy({ left: -400, behavior: 'smooth' });
+    }
+  };
+
+  const scrollRight = () => {
+    const container = scrollContainerRef.current;
+    if (container) {
+      container.scrollBy({ left: 400, behavior: 'smooth' });
+    }
+  };
 
   return (
     <section className="relative w-full bg-white py-16! md:py-20! flex flex-col items-center">
@@ -178,6 +193,24 @@ const Analytics = () => {
               </div>
             </div>
           </div>
+
+        </div>
+        {/* Navigation Arrows - Bottom Right */}
+        <div className="absolute bottom-8 right-4 md:right-8 flex gap-3 z-30">
+          <button
+            onClick={scrollLeft}
+            className="w-12 h-12 bg-white rounded-full shadow-lg border border-gray-200 flex items-center justify-center hover:bg-gray-50 hover:scale-105 transition-all duration-200"
+            aria-label="Previous slide"
+          >
+            <ChevronLeft className="w-5 h-5 text-gray-600" />
+          </button>
+          <button
+            onClick={scrollRight}
+            className="w-12 h-12 bg-white rounded-full shadow-lg border border-gray-200 flex items-center justify-center hover:bg-gray-50 hover:scale-105 transition-all duration-200"
+            aria-label="Next slide"
+          >
+            <ChevronRight className="w-5 h-5 text-gray-600" />
+          </button>
         </div>
 
         {/* Bottom Section */}
@@ -188,11 +221,7 @@ const Analytics = () => {
         </div>
       </div>
 
-      {/* Decorative Background Elements
-      <div className="absolute top-16 md:top-20 left-16 md:left-20 w-48 md:w-64 h-48 md:h-64 opacity-10 -z-10">
-        <div className="absolute w-36 md:w-48 h-36 md:h-48 border border-blue-200 rounded-full transform rotate-12"></div>
-        <div className="absolute w-40 md:w-56 h-40 md:h-56 border border-purple-200 rounded-full transform rotate-45 top-2 md:top-4 left-2 md:left-4"></div>
-      </div> */}
+
     </section>
   );
 };

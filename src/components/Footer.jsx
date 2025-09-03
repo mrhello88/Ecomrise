@@ -46,9 +46,9 @@ const Footer = () => {
           </div>
 
           {/* Right side - Navigation columns */}
-          <div className="!w-full lg:!w-1/3 !flex justify-center">
+          <div className="!w-full lg:!w-1/3 !flex justify-center !gap-6 sm:!gap-8 lg:!gap-10">
             {/* Products column */}
-            <div className="!basis-1/2 sm:!basis-auto lg:!basis-1/3 !flex !flex-col !items-center !text-center">
+            <div className="!basis-1/2 sm:!basis-auto lg:!basis-1/3 !flex !flex-col !items-start !text-left">
               <h4 className="!text-base sm:!text-lg !font-semibold text-gray-900 !mb-4 sm:!mb-6">
                 Products
               </h4>
@@ -58,7 +58,7 @@ const Footer = () => {
                     href="#"
                     className="!text-sm sm:!text-base text-gray-700 hover:text-[var(--primary-color)] transition-colors"
                   >
-                    Anomaly
+                    Anomaly detector
                   </a>
                 </li>
                 <li>
@@ -66,7 +66,7 @@ const Footer = () => {
                     href="#"
                     className="!text-sm sm:!text-base text-gray-700 hover:text-[var(--primary-color)] transition-colors"
                   >
-                    Analytics
+                    Analytics agents
                   </a>
                 </li>
                 <li>
@@ -74,14 +74,14 @@ const Footer = () => {
                     href="#"
                     className="!text-sm sm:!text-base text-gray-700 hover:text-[var(--primary-color)] transition-colors"
                   >
-                    Build
+                    Build custom agents
                   </a>
                 </li>
               </ul>
             </div>
 
             {/* Resources column */}
-            <div className="!basis-1/2 sm:!basis-auto lg:!basis-1/3 !flex !flex-col !items-center !text-center">
+            <div className="!basis-1/2 sm:!basis-auto lg:!basis-1/3 !flex !flex-col !items-start !text-left">
               <h4 className="!text-base sm:!text-lg !font-semibold text-gray-900 !mb-4 sm:!mb-6">
                 Resources
               </h4>
@@ -114,7 +114,7 @@ const Footer = () => {
             </div>
 
             {/* Company column */}
-            <div className="!basis-1/2 sm:!basis-auto lg:!basis-1/3 !flex !flex-col !items-center !text-center">
+            <div className="!basis-1/2 sm:!basis-auto lg:!basis-1/3 !flex !flex-col !items-start !text-left">
               <h4 className="!text-base sm:!text-lg !font-semibold text-gray-900 !mb-4 sm:!mb-6">
                 Company
               </h4>
@@ -140,9 +140,9 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Bottom section - Copyright and scroll to top */}
-        <div className="!flex !flex-col sm:!flex-row !items-center !justify-between !gap-4 !pt-8">
-          <p className="!text-sm text-gray-600 !text-right">
+        {/* Bottom section - Copyright and scroll to top aligned to right */}
+        <div className="!flex !flex-col sm:!flex-row !items-center !justify-end !gap-4 !pt-8">
+          <p className="!text-sm text-gray-600">
             Copyright © 2023 EcomRise. All rights reserved
           </p>
 

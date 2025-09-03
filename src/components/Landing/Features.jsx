@@ -107,42 +107,104 @@ export default function Features() {
                   className="w-full h-full object-contain"
                 />
 
-                {/* 6 overlay images with absolute positioning */}
+                {/* 12 overlay images with absolute positioning */}
+                {/**done */}
                 <img
                   src="/card-2/image-1.png"
                   alt="overlay-image-1"
                   className="absolute w-[40px] h-[40px] md:w-[50px] md:h-[50px] lg:w-[60px] lg:h-[60px] object-contain"
-                  style={{ top: "13%", left: "22%" }}
+                  style={{ bottom: "23%", right: "16%" }}
                 />
-                {/* <img
+                {/**done */}
+                <img
                   src="/card-2/image-2.png"
                   alt="overlay-image-2"
-                  className="absolute w-[60px] h-[60px] object-contain"
-                  style={{ top: '30%', right: '20%' }}
-                /> */}
+                  className="absolute w-[40px] h-[40px] md:w-[50px] md:h-[50px] lg:w-[60px] lg:h-[60px] object-contain"
+                  style={{ top: "25%", left: "8%" }}
+                />
+                {/**done */}
                 <img
                   src="/card-2/image-3.png"
                   alt="overlay-image-3"
                   className="absolute w-[40px] h-[40px] md:w-[50px] md:h-[50px] lg:w-[60px] lg:h-[60px] object-contain"
                   style={{ top: "40%", left: "40%" }}
                 />
+                {/**done */}
                 <img
                   src="/card-2/image-4.png"
                   alt="overlay-image-4"
                   className="absolute w-[40px] h-[40px] md:w-[50px] md:h-[50px] lg:w-[60px] lg:h-[60px] object-contain"
-                  style={{ bottom: "20%", right: "10%" }}
+                  style={{ top: "38%", right: "28%" }}
                 />
+                {/**done */}
                 <img
                   src="/card-2/image-5.png"
                   alt="overlay-image-5"
                   className="absolute w-[40px] h-[40px] md:w-[50px] md:h-[50px] lg:w-[60px] lg:h-[60px] object-contain"
-                  style={{ top: "15%", left: "61.5%" }}
+                  style={{ top: "36%", left: "22%" }}
                 />
+                {/*done */}
                 <img
                   src="/card-2/image-6.png"
                   alt="overlay-image-6"
                   className="absolute w-[40px] h-[40px] md:w-[50px] md:h-[50px] lg:w-[60px] lg:h-[60px] object-contain"
-                  style={{ bottom: "25%", left: "10%" }}
+                  style={{ bottom: "13%", right: "30%" }}
+                />
+                {/**done */}
+                <img
+                  src="/card-2/image-7.png"
+                  alt="overlay-image-7"
+                  className="absolute w-[40px] h-[40px] md:w-[50px] md:h-[50px] lg:w-[60px] lg:h-[60px] object-contain"
+                  style={{ top: "4%", left: "48%" }}
+                />
+                {/*done */}
+                <img
+                  src="/card-2/image-8.png"
+                  alt="overlay-image-8"
+                  className="absolute w-[40px] h-[40px] md:w-[50px] md:h-[50px] lg:w-[60px] lg:h-[60px] object-contain"
+                  style={{ top: "12%", left: "25%" }}
+                />
+                {/**done */}
+                <img
+                  src="/card-2/image-14.png"
+                  alt="overlay-image-14"
+                  className="absolute w-[40px] h-[40px] md:w-[50px] md:h-[50px] lg:w-[60px] lg:h-[60px] object-contain"
+                  style={{ bottom: "12%", left: "27%" }}
+                />
+                {/**done */}
+                <img
+                  src="/card-2/image-13.png"
+                  alt="overlay-image-13"
+                  className="absolute w-[40px] h-[40px] md:w-[50px] md:h-[50px] lg:w-[60px] lg:h-[60px] object-contain"
+                  style={{ top: "16%", right: "38%" }}
+                />
+                {/* done */}
+                <img
+                  src="/card-2/image-9.png"
+                  alt="overlay-image-9"
+                  className="absolute w-[40px] h-[40px] md:w-[50px] md:h-[50px] lg:w-[60px] lg:h-[60px] object-contain"
+                  style={{ top: "20%", right: "13%" }}
+                />
+                {/**done */}
+                <img
+                  src="/card-2/image-10.png"
+                  alt="overlay-image-10"
+                  className="absolute w-[40px] h-[40px] md:w-[50px] md:h-[50px] lg:w-[60px] lg:h-[60px] object-contain"
+                  style={{ top: "50%", right: "4%" }}
+                />
+                {/**done */}
+                <img
+                  src="/card-2/image-11.png"
+                  alt="overlay-image-11"
+                  className="absolute w-[40px] h-[40px] md:w-[50px] md:h-[50px] lg:w-[60px] lg:h-[60px] object-contain"
+                  style={{ bottom: "30%", left: "50%" }}
+                />
+                {/**done */}
+                <img
+                  src="/card-2/image-12.png"
+                  alt="overlay-image-12"
+                  className="absolute w-[40px] h-[40px] md:w-[50px] md:h-[50px] lg:w-[60px] lg:h-[60px] object-contain"
+                  style={{ bottom: "25%", left: "15%" }}
                 />
               </div>
             </div>

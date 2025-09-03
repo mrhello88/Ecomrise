@@ -7,7 +7,7 @@ const Footer = () => {
         <div className="!flex !flex-col lg:!flex-row lg:!justify-between !items-start !gap-10 lg:!gap-16 !mb-16">
           {/* Left side - Newsletter signup */}
           <div className="!w-full lg:!w-2/3 !mb-8 lg:!mb-0">
-            <h3 className="!text-center !text-2xl sm:!text-3xl !leading-snug !font-normal text-gray-800 !mb-6 sm:!mb-8">
+            <h3 className="!text-left !text-2xl sm:!text-3xl !leading-snug !font-normal text-gray-800 !mb-6 sm:!mb-8">
               Join our newsletter for the{" "}
               <em className="italic font-normal">
                 latest updates, pro design tips, and exclusive offers
@@ -46,9 +46,9 @@ const Footer = () => {
           </div>
 
           {/* Right side - Navigation columns */}
-          <div className="!w-full lg:!w-1/3 !flex justify-center !gap-6 sm:!gap-8 lg:!gap-10">
+          <div className="!w-full lg:!w-1/3 !flex justify-between">
             {/* Products column */}
-            <div className="!basis-1/2 sm:!basis-auto lg:!basis-1/3 !flex !flex-col !items-start !text-left">
+            <div className="!flex !flex-col !items-start !text-left">
               <h4 className="!text-base sm:!text-lg !font-semibold text-gray-900 !mb-4 sm:!mb-6">
                 Products
               </h4>
@@ -81,7 +81,7 @@ const Footer = () => {
             </div>
 
             {/* Resources column */}
-            <div className="!basis-1/2 sm:!basis-auto lg:!basis-1/3 !flex !flex-col !items-start !text-left">
+            <div className="!flex !flex-col !items-start !text-left">
               <h4 className="!text-base sm:!text-lg !font-semibold text-gray-900 !mb-4 sm:!mb-6">
                 Resources
               </h4>
@@ -114,7 +114,7 @@ const Footer = () => {
             </div>
 
             {/* Company column */}
-            <div className="!basis-1/2 sm:!basis-auto lg:!basis-1/3 !flex !flex-col !items-start !text-left">
+            <div className="!flex !flex-col !items-start !text-left">
               <h4 className="!text-base sm:!text-lg !font-semibold text-gray-900 !mb-4 sm:!mb-6">
                 Company
               </h4>

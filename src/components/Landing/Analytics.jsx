@@ -14,18 +14,66 @@ const Analytics = () => {
     container.scrollTo({ left: Math.max(0, targetScrollLeft) });
   }, []);
 
-  const scrollLeft = () => {
+  // Helpers to compute snapping scroll positions
+  const getTrackAndCards = () => {
     const container = scrollContainerRef.current;
-    if (container) {
-      container.scrollBy({ left: -400, behavior: 'smooth' });
+    if (!container) return { container: null, track: null, cards: [] };
+    const track = container.firstElementChild;
+    if (!track) return { container, track: null, cards: [] };
+    const cards = Array.from(track.children);
+    return { container, track, cards };
+  };
+
+  const getCenteredScrollLeftForCard = (container, card) => {
+    const maxScrollLeft = container.scrollWidth - container.clientWidth;
+    const left = card.offsetLeft - (container.clientWidth - card.clientWidth) / 2;
+    return Math.max(0, Math.min(left, maxScrollLeft));
+  };
+
+  const getCurrentCardIndex = () => {
+    const { container, cards } = getTrackAndCards();
+    if (!container || cards.length === 0) return 0;
+    const containerCenter = container.scrollLeft + container.clientWidth / 2;
+    let nearestIndex = 0;
+    let nearestDistance = Infinity;
+    cards.forEach((card, index) => {
+      const cardCenter = card.offsetLeft + card.clientWidth / 2;
+      const distance = Math.abs(cardCenter - containerCenter);
+      if (distance < nearestDistance) {
+        nearestDistance = distance;
+        nearestIndex = index;
+      }
+    });
+    return nearestIndex;
+  };
+
+  const scrollLeft = () => {
+    const { container, cards } = getTrackAndCards();
+    if (!container || cards.length === 0) return;
+    const current = getCurrentCardIndex();
+    const target = Math.max(0, current - 1);
+    let left;
+    if (target === 0) {
+      left = 0; // show first card fully
+    } else {
+      left = getCenteredScrollLeftForCard(container, cards[target]);
     }
+    container.scrollTo({ left, behavior: 'smooth' });
   };
 
   const scrollRight = () => {
-    const container = scrollContainerRef.current;
-    if (container) {
-      container.scrollBy({ left: 400, behavior: 'smooth' });
+    const { container, cards } = getTrackAndCards();
+    if (!container || cards.length === 0) return;
+    const current = getCurrentCardIndex();
+    const lastIndex = cards.length - 1;
+    const target = Math.min(lastIndex, current + 1);
+    let left;
+    if (target === lastIndex) {
+      left = container.scrollWidth - container.clientWidth; // show last card fully
+    } else {
+      left = getCenteredScrollLeftForCard(container, cards[target]);
     }
+    container.scrollTo({ left, behavior: 'smooth' });
   };
 
   return (

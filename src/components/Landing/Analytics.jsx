@@ -1,18 +1,100 @@
-import { useEffect, useRef } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { useEffect, useRef, useState } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const Analytics = () => {
   const scrollContainerRef = useRef(null);
   const secondCardRef = useRef(null);
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [dragScrollLeft, setDragScrollLeft] = useState(0);
 
   useEffect(() => {
     const container = scrollContainerRef.current;
     const secondCard = secondCardRef.current;
     if (!container || !secondCard) return;
 
-    const targetScrollLeft = secondCard.offsetLeft - (container.clientWidth - secondCard.clientWidth) / 2;
+    const targetScrollLeft =
+      secondCard.offsetLeft -
+      (container.clientWidth - secondCard.clientWidth) / 2;
     container.scrollTo({ left: Math.max(0, targetScrollLeft) });
   }, []);
+
+  // Global mouse up listener to prevent drag from getting stuck
+  useEffect(() => {
+    const handleGlobalMouseUp = () => {
+      if (isDragging) {
+        setIsDragging(false);
+      }
+    };
+
+    const handleGlobalMouseMove = (e) => {
+      if (isDragging) {
+        e.preventDefault();
+        const x = e.pageX;
+        const walk = x - startX;
+        scrollContainerRef.current.scrollLeft = dragScrollLeft - walk;
+      }
+    };
+
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape" && isDragging) {
+        setIsDragging(false);
+      }
+    };
+
+    document.addEventListener("mouseup", handleGlobalMouseUp);
+    document.addEventListener("mousemove", handleGlobalMouseMove);
+    document.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.removeEventListener("mouseup", handleGlobalMouseUp);
+      document.removeEventListener("mousemove", handleGlobalMouseMove);
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [isDragging, startX, dragScrollLeft]);
+
+  // Mouse drag handlers
+  const handleMouseDown = (e) => {
+    e.preventDefault();
+    setIsDragging(true);
+    setStartX(e.pageX);
+    setDragScrollLeft(scrollContainerRef.current.scrollLeft);
+  };
+
+  const handleMouseMove = (e) => {
+    if (!isDragging) return;
+    e.preventDefault();
+    const x = e.pageX;
+    const walk = x - startX;
+    scrollContainerRef.current.scrollLeft = dragScrollLeft - walk;
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+  };
+
+  const handleMouseLeave = () => {
+    setIsDragging(false);
+  };
+
+  // Add touch support for mobile
+  const handleTouchStart = (e) => {
+    setIsDragging(true);
+    setStartX(e.touches[0].pageX);
+    setDragScrollLeft(scrollContainerRef.current.scrollLeft);
+  };
+
+  const handleTouchMove = (e) => {
+    if (!isDragging) return;
+    e.preventDefault();
+    const x = e.touches[0].pageX;
+    const walk = x - startX;
+    scrollContainerRef.current.scrollLeft = dragScrollLeft - walk;
+  };
+
+  const handleTouchEnd = () => {
+    setIsDragging(false);
+  };
 
   // Helpers to compute snapping scroll positions
   const getTrackAndCards = () => {
@@ -26,7 +108,8 @@ const Analytics = () => {
 
   const getCenteredScrollLeftForCard = (container, card) => {
     const maxScrollLeft = container.scrollWidth - container.clientWidth;
-    const left = card.offsetLeft - (container.clientWidth - card.clientWidth) / 2;
+    const left =
+      card.offsetLeft - (container.clientWidth - card.clientWidth) / 2;
     return Math.max(0, Math.min(left, maxScrollLeft));
   };
 
@@ -47,7 +130,7 @@ const Analytics = () => {
     return nearestIndex;
   };
 
-  const scrollLeft = () => {
+  const scrollToLeft = () => {
     const { container, cards } = getTrackAndCards();
     if (!container || cards.length === 0) return;
     const current = getCurrentCardIndex();
@@ -58,10 +141,10 @@ const Analytics = () => {
     } else {
       left = getCenteredScrollLeftForCard(container, cards[target]);
     }
-    container.scrollTo({ left, behavior: 'smooth' });
+    container.scrollTo({ left, behavior: "smooth" });
   };
 
-  const scrollRight = () => {
+  const scrollToRight = () => {
     const { container, cards } = getTrackAndCards();
     if (!container || cards.length === 0) return;
     const current = getCurrentCardIndex();
@@ -73,7 +156,7 @@ const Analytics = () => {
     } else {
       left = getCenteredScrollLeftForCard(container, cards[target]);
     }
-    container.scrollTo({ left, behavior: 'smooth' });
+    container.scrollTo({ left, behavior: "smooth" });
   };
 
   return (
@@ -98,7 +181,20 @@ const Analytics = () => {
 
         {/* Carousel Section */}
         <div className="relative w-full">
-          <div ref={scrollContainerRef} className="overflow-x-auto scrollbar-hide pb-3! md:pb-8!">
+          <div
+            ref={scrollContainerRef}
+            className={`overflow-x-auto scrollbar-hide pb-3! md:pb-8! ${
+              isDragging ? "cursor-grabbing" : "cursor-grab"
+            }`}
+            onMouseDown={handleMouseDown}
+            onMouseMove={handleMouseMove}
+            onMouseUp={handleMouseUp}
+            onMouseLeave={handleMouseLeave}
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
+            style={{ userSelect: "none" }}
+          >
             <div className="flex gap-6! md:gap-10!">
               {/* Analytics Agent Card */}
               <div className="flex-shrink-0 w-[350px]! md:w-[1059px]! 2xl:w-auto h-[345px]! md:h-[486px]! 2xl:h-auto rounded-3xl relative overflow-hidden features-gradient">
@@ -150,7 +246,10 @@ const Analytics = () => {
                 </div>
               </div>
               {/* Analytics Agent Card (duplicate 1) */}
-              <div ref={secondCardRef} className="flex-shrink-0 w-[350px]! md:w-[1059px]! 2xl:w-auto h-[345px]! md:h-[486px]! 2xl:h-auto rounded-3xl relative overflow-hidden features-gradient">
+              <div
+                ref={secondCardRef}
+                className="flex-shrink-0 w-[350px]! md:w-[1059px]! 2xl:w-auto h-[345px]! md:h-[486px]! 2xl:h-auto rounded-3xl relative overflow-hidden features-gradient"
+              >
                 {/* Feature Background */}
                 <img
                   src="/Mobile-Mask-group-Analytics-Card.png"
@@ -241,19 +340,18 @@ const Analytics = () => {
               </div>
             </div>
           </div>
-
         </div>
         {/* Navigation Arrows - Bottom Right */}
         <div className="absolute bottom-8 right-4 md:right-8 flex gap-3 z-30">
           <button
-            onClick={scrollLeft}
+            onClick={scrollToLeft}
             className="w-12 h-12 bg-white rounded-full shadow-lg border border-gray-200 flex items-center justify-center hover:bg-gray-50 hover:scale-105 transition-all duration-200"
             aria-label="Previous slide"
           >
             <ChevronLeft className="w-5 h-5 text-gray-600" />
           </button>
           <button
-            onClick={scrollRight}
+            onClick={scrollToRight}
             className="w-12 h-12 bg-white rounded-full shadow-lg border border-gray-200 flex items-center justify-center hover:bg-gray-50 hover:scale-105 transition-all duration-200"
             aria-label="Next slide"
           >
@@ -268,8 +366,6 @@ const Analytics = () => {
           </p>
         </div>
       </div>
-
-
     </section>
   );
 };

@@ -81,17 +81,19 @@ const Navbar = () => {
                   <img
                     src="/Arrow-Down3.svg"
                     alt="Products dropdown"
-                    className={`!w-4 !h-4 !transition-transform !duration-300 ${isProductsDropdownOpen ? "!rotate-180" : ""
-                      }`}
+                    className={`!w-4 !h-4 !transition-transform !duration-300 ${
+                      isProductsDropdownOpen ? "!rotate-180" : ""
+                    }`}
                   />
                 </button>
 
                 {/* Dropdown Menu */}
                 <div
-                  className={`!absolute !top-full !left-1/2 !transform !-translate-x-1/2 !mt-4 !bg-white !rounded-2xl !shadow-2xl !border !border-gray-100 !transition-all !duration-200 ${isProductsDropdownOpen
-                    ? "!opacity-100 !scale-100 !translate-y-0"
-                    : "!opacity-0 !scale-95 !-translate-y-2 !pointer-events-none"
-                    }`}
+                  className={`!absolute !top-full !left-1/2 !transform !-translate-x-1/2 !mt-4 !bg-white !rounded-2xl !shadow-2xl !border !border-gray-100 !transition-all !duration-200 ${
+                    isProductsDropdownOpen
+                      ? "!opacity-100 !scale-100 !translate-y-0"
+                      : "!opacity-0 !scale-95 !-translate-y-2 !pointer-events-none"
+                  }`}
                   style={{ width: "780px" }}
                 >
                   <div className="!p-8">
@@ -105,7 +107,8 @@ const Navbar = () => {
                           Startups
                         </h3>
                         <p className="!text-sm !text-gray-600 !leading-relaxed">
-                          Hire Ava to manage your entire outbound operation, keeping your team lean and efficient.
+                          Hire Ava to manage your entire outbound operation,
+                          keeping your team lean and efficient.
                         </p>
                       </div>
 
@@ -118,7 +121,8 @@ const Navbar = () => {
                           Midmarket
                         </h3>
                         <p className="!text-sm !text-gray-600 !leading-relaxed">
-                          Streamline your existing outbound workflow by automating 80% of manual tasks.
+                          Streamline your existing outbound workflow by
+                          automating 80% of manual tasks.
                         </p>
                       </div>
 
@@ -131,7 +135,9 @@ const Navbar = () => {
                           Enterprise
                         </h3>
                         <p className="!text-sm !text-gray-600 !leading-relaxed">
-                          Equip your team with top-tier tools for each stage of the outbound cycle, including an AI colleague to keep everything on track.
+                          Equip your team with top-tier tools for each stage of
+                          the outbound cycle, including an AI colleague to keep
+                          everything on track.
                         </p>
                       </div>
                     </div>
@@ -172,7 +178,7 @@ const Navbar = () => {
 
         {/* Right side - Join Waiting List Button */}
         <div className="!ml-8 flex justify-center items-center">
-          <button className="!bg-[var(--primary-color)] !text-[var(--quaternary-color)] !h-13 !w-48 !rounded-full !py-4 !px-6 !cursor-pointer !shadow-lg flex justify-center items-center">
+          <button className="!bg-[var(--primary-color)] !text-[var(--quaternary-color)] !h-13 !w-48 !rounded-full !py-4 !px-6 !cursor-pointer !shadow-lg flex justify-center items-center hover:!bg-[#0f47b3] hover:!scale-105 hover:!shadow-xl !transition-all !duration-300 active:!scale-95">
             Join Waiting List
           </button>
         </div>
@@ -208,10 +214,11 @@ const Navbar = () => {
 
             {/* Mobile slide-down menu */}
             <div
-              className={`!absolute !top-[96px] !left-0 !right-0 !mx-auto !w-full !max-w-[376px] !bg-[var(--quaternary-color)] !rounded-2xl !shadow-lg !overflow-hidden !transition-all !duration-300 ${isMobileMenuOpen
-                ? "!max-h-[320px] !opacity-100"
-                : "!max-h-0 !opacity-0"
-                }`}
+              className={`!absolute !top-[96px] !left-0 !right-0 !mx-auto !w-full !max-w-[376px] !bg-[var(--quaternary-color)] !rounded-2xl !shadow-lg !overflow-hidden !transition-all !duration-300 ${
+                isMobileMenuOpen
+                  ? "!max-h-[320px] !opacity-100"
+                  : "!max-h-0 !opacity-0"
+              }`}
             >
               <div className="!flex !flex-col">
                 <button className="!text-left !px-6 !py-4 !text-[var(--tertiary-color)] !opacity-70 hover:!opacity-100 !border-b !border-gray-100">
@@ -285,7 +292,8 @@ const Navbar = () => {
                 </h3>
               </div>
               <p className="!text-gray-600 !leading-relaxed">
-                Hire Ava to manage your entire outbound operation, keeping your team lean and efficient.
+                Hire Ava to manage your entire outbound operation, keeping your
+                team lean and efficient.
               </p>
             </div>
 
@@ -300,7 +308,8 @@ const Navbar = () => {
                 </h3>
               </div>
               <p className="!text-gray-600 !leading-relaxed">
-                Streamline your existing outbound workflow by automating 80% of manual tasks.
+                Streamline your existing outbound workflow by automating 80% of
+                manual tasks.
               </p>
             </div>
 
@@ -315,7 +324,9 @@ const Navbar = () => {
                 </h3>
               </div>
               <p className="!text-gray-600 !leading-relaxed">
-                Equip your team with top-tier tools for each stage of the outbound cycle, including an AI colleague to keep everything on track.
+                Equip your team with top-tier tools for each stage of the
+                outbound cycle, including an AI colleague to keep everything on
+                track.
               </p>
             </div>
           </div>

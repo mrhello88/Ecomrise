@@ -6,9 +6,9 @@ const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [showMobileProducts, setShowMobileProducts] = useState(false);
   const dropdownRef = useRef(null);
-  const hoverTimeoutRef = useRef(null);
+  // legacy hover ref removed (click-only now)
 
-  // Close dropdown when clicking outside
+  // Close dropdown when clicking/tapping outside
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -17,23 +17,16 @@ const Navbar = () => {
     };
 
     document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("touchstart", handleClickOutside, { passive: true });
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("touchstart", handleClickOutside);
     };
   }, []);
 
-  // Handle hover for desktop dropdown
-  const handleMouseEnter = () => {
-    if (hoverTimeoutRef.current) {
-      clearTimeout(hoverTimeoutRef.current);
-    }
-    setIsProductsDropdownOpen(true);
-  };
-
-  const handleMouseLeave = () => {
-    hoverTimeoutRef.current = setTimeout(() => {
-      setIsProductsDropdownOpen(false);
-    }, 100);
+  // Remove hover behavior: dropdown opens/closes on click only
+  const handleProductsClick = () => {
+    setIsProductsDropdownOpen((prev) => !prev);
   };
 
   const handleMobileProductsClick = () => {
@@ -73,10 +66,8 @@ const Navbar = () => {
               <div
                 ref={dropdownRef}
                 className="!relative !flex !flex-row !items-center !flex-none !order-1 !flex-grow-0"
-                onMouseEnter={handleMouseEnter}
-                onMouseLeave={handleMouseLeave}
               >
-                <button className="!flex !items-center !h-4 !gap-1 !font-medium !text-base !leading-[120%] !text-center !text-[var(--tertiary-color)] !opacity-50 hover:!text-[var(--primary-color)] hover:!opacity-100 !bg-transparent !border-none !cursor-pointer">
+                <button onClick={handleProductsClick} className="!flex !items-center !h-4 !gap-1 !font-medium !text-base !leading-[120%] !text-center !text-[var(--tertiary-color)] !opacity-50 hover:!text-[var(--primary-color)] hover:!opacity-100 !bg-transparent !border-none !cursor-pointer">
                   <span>Products</span>
                   <img
                     src="/Arrow-Down3.svg"

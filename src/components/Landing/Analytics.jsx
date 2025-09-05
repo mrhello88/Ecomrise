@@ -134,10 +134,15 @@ const Analytics = () => {
     const { container, cards } = getTrackAndCards();
     if (!container || cards.length === 0) return;
     const current = getCurrentCardIndex();
-    const target = Math.max(0, current - 1);
+    
+    // Infinite loop: if at first card, go to last card
+    const target = current === 0 ? cards.length - 1 : current - 1;
+    
     let left;
     if (target === 0) {
       left = 0; // show first card fully
+    } else if (target === cards.length - 1) {
+      left = container.scrollWidth - container.clientWidth; // show last card fully
     } else {
       left = getCenteredScrollLeftForCard(container, cards[target]);
     }
@@ -149,9 +154,14 @@ const Analytics = () => {
     if (!container || cards.length === 0) return;
     const current = getCurrentCardIndex();
     const lastIndex = cards.length - 1;
-    const target = Math.min(lastIndex, current + 1);
+    
+    // Infinite loop: if at last card, go to first card
+    const target = current === lastIndex ? 0 : current + 1;
+    
     let left;
-    if (target === lastIndex) {
+    if (target === 0) {
+      left = 0; // show first card fully
+    } else if (target === lastIndex) {
       left = container.scrollWidth - container.clientWidth; // show last card fully
     } else {
       left = getCenteredScrollLeftForCard(container, cards[target]);

@@ -6,9 +6,9 @@ const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [showMobileProducts, setShowMobileProducts] = useState(false);
   const dropdownRef = useRef(null);
-  // legacy hover ref removed (click-only now)
+  const hoverTimeoutRef = useRef(null);
 
-  // Close dropdown when clicking/tapping outside
+  // Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -17,16 +17,23 @@ const Navbar = () => {
     };
 
     document.addEventListener("mousedown", handleClickOutside);
-    document.addEventListener("touchstart", handleClickOutside, { passive: true });
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
-      document.removeEventListener("touchstart", handleClickOutside);
     };
   }, []);
 
-  // Remove hover behavior: dropdown opens/closes on click only
-  const handleProductsClick = () => {
-    setIsProductsDropdownOpen((prev) => !prev);
+  // Handle hover for desktop dropdown
+  const handleMouseEnter = () => {
+    if (hoverTimeoutRef.current) {
+      clearTimeout(hoverTimeoutRef.current);
+    }
+    setIsProductsDropdownOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    hoverTimeoutRef.current = setTimeout(() => {
+      setIsProductsDropdownOpen(false);
+    }, 100);
   };
 
   const handleMobileProductsClick = () => {
@@ -66,8 +73,10 @@ const Navbar = () => {
               <div
                 ref={dropdownRef}
                 className="!relative !flex !flex-row !items-center !flex-none !order-1 !flex-grow-0"
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
               >
-                <button onClick={handleProductsClick} className="!flex !items-center !h-4 !gap-1 !font-medium !text-base !leading-[120%] !text-center !text-[var(--tertiary-color)] !opacity-50 hover:!text-[var(--primary-color)] hover:!opacity-100 !bg-transparent !border-none !cursor-pointer">
+                <button className="!flex !items-center !h-4 !gap-1 !font-medium !text-base !leading-[120%] !text-center !text-[var(--tertiary-color)] !opacity-50 hover:!text-[var(--primary-color)] hover:!opacity-100 !bg-transparent !border-none !cursor-pointer">
                   <span>Products</span>
                   <img
                     src="/Arrow-Down3.svg"
@@ -90,7 +99,10 @@ const Navbar = () => {
                   <div className="!p-8">
                     <div className="!grid !grid-cols-3 !gap-6">
                       {/* Product Item 1 - Startups */}
-                      <div className="!flex !flex-col !p-6 !rounded-xl !hover:!bg-gray-50 !transition-all !duration-200 !cursor-pointer !border !border-transparent hover:!border-cyan-200 !group">
+                      <div 
+                        onClick={() => setIsProductsDropdownOpen(false)}
+                        className="!flex !flex-col !p-6 !rounded-xl !hover:!bg-gray-50 !transition-all !duration-200 !cursor-pointer !border !border-transparent hover:!border-cyan-200 !group"
+                      >
                         <div className="!w-10 !h-10 !bg-gradient-to-br !from-cyan-400 !to-cyan-500 !rounded-xl !flex !items-center !justify-center !mb-4 !group-hover:!scale-105 !transition-transform">
                           <Rocket className="!w-5 !h-5 !text-white" />
                         </div>
@@ -104,7 +116,10 @@ const Navbar = () => {
                       </div>
 
                       {/* Product Item 2 - Midmarket */}
-                      <div className="!flex !flex-col !p-6 !rounded-xl !hover:!bg-gray-50 !transition-all !duration-200 !cursor-pointer !border !border-transparent hover:!border-pink-200 !group">
+                      <div 
+                        onClick={() => setIsProductsDropdownOpen(false)}
+                        className="!flex !flex-col !p-6 !rounded-xl !hover:!bg-gray-50 !transition-all !duration-200 !cursor-pointer !border !border-transparent hover:!border-pink-200 !group"
+                      >
                         <div className="!w-10 !h-10 !bg-gradient-to-br !from-pink-400 !to-pink-500 !rounded-xl !flex !items-center !justify-center !mb-4 !group-hover:!scale-105 !transition-transform">
                           <Building className="!w-5 !h-5 !text-white" />
                         </div>
@@ -118,7 +133,10 @@ const Navbar = () => {
                       </div>
 
                       {/* Product Item 3 - Enterprise */}
-                      <div className="!flex !flex-col !p-6 !rounded-xl !hover:!bg-gray-50 !transition-all !duration-200 !cursor-pointer !border !border-transparent hover:!border-purple-200 !group">
+                      <div 
+                        onClick={() => setIsProductsDropdownOpen(false)}
+                        className="!flex !flex-col !p-6 !rounded-xl !hover:!bg-gray-50 !transition-all !duration-200 !cursor-pointer !border !border-transparent hover:!border-purple-200 !group"
+                      >
                         <div className="!w-10 !h-10 !bg-gradient-to-br !from-purple-400 !to-purple-500 !rounded-xl !flex !items-center !justify-center !mb-4 !group-hover:!scale-105 !transition-transform">
                           <Building2 className="!w-5 !h-5 !text-white" />
                         </div>
@@ -169,7 +187,7 @@ const Navbar = () => {
 
         {/* Right side - Join Waiting List Button */}
         <div className="!ml-8 flex justify-center items-center">
-          <button className="!bg-[var(--primary-color)] !text-[var(--quaternary-color)] !h-13 !w-48 !rounded-full !py-4 !px-6 !cursor-pointer !shadow-lg flex justify-center items-center hover:!bg-[#0f47b3] hover:!scale-105 hover:!shadow-xl !transition-all !duration-300 active:!scale-95">
+          <button className="!bg-[var(--primary-color)] !text-[var(--quaternary-color)] !h-13 !w-48 !rounded-full !py-4 !px-6 !cursor-pointer !shadow-lg flex justify-center items-center hover:!bg-[#0F3BA8] hover:!scale-105 hover:!shadow-xl !transition-all !duration-300">
             Join Waiting List
           </button>
         </div>
@@ -273,7 +291,13 @@ const Navbar = () => {
           {/* Products List */}
           <div className="!px-6 !space-y-4 !pb-8">
             {/* Startups */}
-            <div className="!p-6 !bg-[var(--quaternary-color)] !rounded-2xl !shadow-sm">
+            <div 
+              onClick={() => {
+                setShowMobileProducts(false);
+                setIsMobileMenuOpen(false);
+              }}
+              className="!p-6 !bg-[var(--quaternary-color)] !rounded-2xl !shadow-sm !cursor-pointer !hover:!shadow-md !transition-shadow !duration-200"
+            >
               <div className="!flex !items-center !gap-3 !mb-3">
                 <div className="!w-8 !h-8 !bg-gradient-to-br !from-cyan-400 !to-cyan-500 !rounded-lg !flex !items-center !justify-center">
                   <Rocket className="!w-4 !h-4 !text-white" />
@@ -289,7 +313,13 @@ const Navbar = () => {
             </div>
 
             {/* Midmarket */}
-            <div className="!p-6 !bg-[var(--quaternary-color)] !rounded-2xl !shadow-sm">
+            <div 
+              onClick={() => {
+                setShowMobileProducts(false);
+                setIsMobileMenuOpen(false);
+              }}
+              className="!p-6 !bg-[var(--quaternary-color)] !rounded-2xl !shadow-sm !cursor-pointer !hover:!shadow-md !transition-shadow !duration-200"
+            >
               <div className="!flex !items-center !gap-3 !mb-3">
                 <div className="!w-8 !h-8 !bg-gradient-to-br !from-pink-400 !to-pink-500 !rounded-lg !flex !items-center !justify-center">
                   <Building className="!w-4 !h-4 !text-white" />
@@ -305,7 +335,13 @@ const Navbar = () => {
             </div>
 
             {/* Enterprise */}
-            <div className="!p-6 !bg-[var(--quaternary-color)] !rounded-2xl !shadow-sm">
+            <div 
+              onClick={() => {
+                setShowMobileProducts(false);
+                setIsMobileMenuOpen(false);
+              }}
+              className="!p-6 !bg-[var(--quaternary-color)] !rounded-2xl !shadow-sm !cursor-pointer !hover:!shadow-md !transition-shadow !duration-200"
+            >
               <div className="!flex !items-center !gap-3 !mb-3">
                 <div className="!w-8 !h-8 !bg-gradient-to-br !from-purple-400 !to-purple-500 !rounded-lg !flex !items-center !justify-center">
                   <Building2 className="!w-4 !h-4 !text-white" />

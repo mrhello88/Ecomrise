@@ -75,7 +75,7 @@ const Hero = () => {
 
               {/* CTA button and avatars row */}
               <div className="flex items-center gap-1.5! h-12! md:h-13! lg:h-13! mt-8! md:mt-6! lg:mt-8!">
-                <button className="w-48! md:w-44! lg:w-52! h-12! md:h-13! lg:h-13! rounded-full bg-[var(--primary-color)] text-[var(--quaternary-color)] font-bold text-sm! md:text-sm! lg:text-base! leading-6! shadow-lg! px-5! md:px-5! lg:px-6! py-3! md:py-3.5! lg:py-3.5! flex items-center justify-center gap-2! whitespace-nowrap hover:bg-[#0f47b3] hover:scale-105 hover:shadow-xl transition-all duration-300 active:scale-95">
+                <button className="w-48! md:w-44! lg:w-52! h-12! md:h-13! lg:h-13! rounded-full bg-[var(--primary-color)] text-[var(--quaternary-color)] font-bold text-sm! md:text-sm! lg:text-base! leading-6! shadow-lg! px-5! md:px-5! lg:px-6! py-3! md:py-3.5! lg:py-3.5! flex items-center justify-center gap-2! whitespace-nowrap cursor-pointer hover:!bg-[#0F3BA8] hover:!scale-105 hover:!shadow-xl !transition-all !duration-300">
                   Join Waiting List
                   <img
                     src="/hero-icon.svg"
